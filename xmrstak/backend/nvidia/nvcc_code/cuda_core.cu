@@ -279,7 +279,7 @@ __global__ void cryptonight_core_gpu_phase2( int threads, int bfactor, int parti
 			{
 				const uint32_t table = 0x75310U;
 				const uint32_t index = ((z >> 26) & 12) | ((z >> 23) & 2);
-				const uint32_t fork_7 = z ^ ((table >> index) & 0x30U) << 24;
+				const uint32_t fork_7 = z ^ ((table >> index) & 0x60U) << 24;
 				storeGlobal32( long_state + j, sub == 2 ? fork_7 : z );
 			}
 			else

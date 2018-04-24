@@ -628,7 +628,7 @@ __kernel void JOIN(cn1,ALGO) (__global uint4 *Scratchpad, __global ulong *states
 #if(ALGO == 3 || ALGO == 5)
 			uint table = 0x75310U;
 			uint index = ((b_x.s2 >> 26) & 12) | ((b_x.s2 >> 23) & 2);
-			b_x.s2 ^= ((table >> index) & 0x30U) << 24;
+			b_x.s2 ^= ((table >> index) & 0x60U) << 24;
 #endif
 			Scratchpad[IDX((idx0 & MASK) >> 4)] = b_x;
 
